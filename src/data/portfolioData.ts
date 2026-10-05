@@ -59,7 +59,7 @@ export const PORTFOLIO_DATA = {
 
   services: [
     {
-      id: "react-native",
+      id: "react-native | ionic",
       title: "Desarrollo Móvil con React Native",
       description:
         "Creación de aplicaciones móviles multiplataforma nativas para iOS y Android con una única base de código robusta y fluida.",
@@ -69,21 +69,30 @@ export const PORTFOLIO_DATA = {
         "Publicación en App Store y Google Play Store",
         "Integración con APIs REST y Firebase",
         "Animaciones nativas a 60fps con Reanimated",
+        "Autenticación con fingerprint o face id",
+        "Notificaciones push",
+        "Uso de componentes nativos del dispositivo (Bluetooth, Camara, GPS, NFC)",
+        "Descarga de archivos PDF y manejo de archivos",
         "Modo offline y almacenamiento local seguro",
       ],
     },
     {
       id: "angular-web",
-      title: "Aplicaciones Web Enterprise con Angular",
+      title: "Aplicaciones Web Enterprise con Angular | React",
       description:
         "Plataformas web escalables, paneles de administración y dashboards interactivos con arquitectura modular Angular y TypeScript.",
       iconName: "Globe",
       badge: "Web & Enterprise",
       deliverables: [
         "Manejo de estado complejo con RxJS y NgRx",
-        "Diseño responsive con Angular Material / Tailwind",
-        "Optimización de rendimiento y Renderizado SSR",
-        "Testing unitario e integración continua",
+        "Arquitectura reactiva con Angular Signals y Standalone Components",
+        "Diseño responsive con Angular Material / Tailwind CSS",
+        "Optimización de rendimiento, Lazy Loading y Renderizado SSR",
+        "Integración en tiempo real con WebSockets y Server-Sent Events",
+        "Soporte para Progressive Web Apps (PWA) y cachés avanzadas",
+        "Seguridad web con Auth Guards, HTTP Interceptors y OAuth2 / OIDC",
+        "Dashboards interactivos y visualización de métricas en tiempo real",
+        "Testing unitario (Jasmine/Jest) e integración continua (CI/CD)",
       ],
     },
     {
@@ -94,10 +103,16 @@ export const PORTFOLIO_DATA = {
       iconName: "Cpu",
       badge: "Kotlin & Jetpack Compose",
       deliverables: [
-        "UI moderna con Jetpack Compose y Material You",
+        "UI moderna con XML y Jetpack Compose",
         "Arquitectura MVVM / Clean Architecture",
-        "Integración con hardware (Cámara, GPS, Bluetooth)",
+        "Integración nativa con hardware (Cámara, GPS, Bluetooth, Sensores GPS, NFC)",
+        "Programación asíncrona con Kotlin Coroutines & Flow",
+        "Inyección de dependencias con Hilt / Dagger",
+        "Autenticación con fingerprint o face id",
+        "Notificaciones push",
+        "Persistencia de datos con Room Database y DataStore",
         "Optimización de consumo de batería y memoria",
+        "Pruebas unitarias e instrumentadas (JUnit, Espresso)",
       ],
     },
     {
@@ -109,9 +124,12 @@ export const PORTFOLIO_DATA = {
       badge: "APIs & Backend",
       deliverables: [
         "APIs RESTful y GraphQL escalables",
-        "Autenticación JWT, OAuth y Firebase Auth",
-        "Bases de datos SQL (PostgreSQL) y NoSQL (MongoDB)",
-        "Despliegue en servicios Cloud (Vercel, AWS, Supabase)",
+        "Autenticación JWT, OAuth2 y Firebase Auth",
+        "Bases de datos SQL (PostgreSQL, MySQL) y NoSQL (MongoDB, Redis)",
+        "Despliegue en servicios Cloud (Azure, AWS, Docker)",
+        "Integración de pasarelas de pago (Stripe, PayPal, MercadoPago)",
+        "Webhooks y arquitectura orientada a eventos",
+        "Documentación interactiva con OpenAPI / Swagger",
       ],
     },
   ] as Service[],
