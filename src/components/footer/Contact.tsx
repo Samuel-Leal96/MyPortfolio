@@ -18,7 +18,7 @@ export const Contact: React.FC<ContactProps> = ({ darkMode }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    projectType: "react-native",
+    projectType: "react-native | ionic",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -31,7 +31,7 @@ export const Contact: React.FC<ContactProps> = ({ darkMode }) => {
       setFormData({
         name: "",
         email: "",
-        projectType: "react-native",
+        projectType: "App Multiplataforma (React Native | Ionic)",
         message: "",
       });
     }, 4000);
@@ -286,11 +286,11 @@ export const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                           : "bg-slate-50 border-slate-300 text-slate-900"
                       }`}
                     >
-                      <option value="react-native">
-                        App Móvil (React Native)
+                      <option value="react-native | ionic">
+                        App Multiplataforma (React Native | Ionic)
                       </option>
                       <option value="angular">
-                        Aplicación Web Enterprise (Angular)
+                        Aplicación Web Enterprise (Angular | React)
                       </option>
                       <option value="android-native">
                         App Móvil Nativa (Android Kotlin)

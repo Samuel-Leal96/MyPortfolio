@@ -33,7 +33,7 @@ export interface SkillCategory {
 
 export const PORTFOLIO_DATA = {
   personalInfo: {
-    name: "Vega's",
+    name: "Vega's Code",
     fullName: "Desarrollador Multiplataforma, nativo y web",
     title: "Ingeniero de Software & Desarrollador Multiplataforma",
     tagline:
@@ -42,9 +42,9 @@ export const PORTFOLIO_DATA = {
       "Soy un desarrollador apasionado por crear aplicaciones modernas, ágiles y de alto rendimiento. Con experiencia sólida en ecosistemas móviles (React Native, Android Kotlin) y aplicaciones web empresariales (Angular, React, Node.js), ayudo a empresas y startups a transformar ideas complejas en productos digitales accesibles e intuitivos.",
     location: "Disponible para trabajo Remoto / Freelance",
     email: "Samuel_Leal96@outlook.com",
-    whatsapp: "+52 481 111 59 24",
+    whatsapp: "+524811115924",
     github: "https://github.com/Samuel-Leal96",
-    linkedin: "www.linkedin.com/in/samuel-leal96",
+    linkedin: "https://www.linkedin.com/in/samuel-leal96",
     cvUrl: "#",
     stats: [
       // { label: "Proyectos Entregados", value: "+20" },

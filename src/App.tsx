@@ -33,7 +33,7 @@ export function App() {
         <Skills darkMode={darkMode} />
         <Projects darkMode={darkMode} />
         <ProcessTimeline darkMode={darkMode} />
-        <Testimonials darkMode={darkMode} />
+        {/* <Testimonials darkMode={darkMode} /> */}
         <Contact darkMode={darkMode} />
       </main>
       <Footer darkMode={darkMode} />
