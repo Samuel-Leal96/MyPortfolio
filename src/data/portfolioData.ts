@@ -141,7 +141,7 @@ export const PORTFOLIO_DATA = {
         "Especialidad en creación de apps iOS & Android fluido y nativo.",
       skills: [
         {
-          name: "React Native",
+          name: "React Native | Ionic | Capacitor",
           level: 95,
           icon: "Smartphone",
           highlight: true,
@@ -161,14 +161,23 @@ export const PORTFOLIO_DATA = {
       category: "Desarrollo Web Frontend",
       description: "Creación de interfaces web ágiles, accesibles y modulares.",
       skills: [
-        { name: "Angular (12+)", level: 92, icon: "Globe", highlight: true },
+        {
+          name: "Angular (17+)",
+          level: 92,
+          icon: "Globe",
+          highlight: true,
+        },
+        {
+          name: "React.js",
+          level: 90,
+          icon: "Layout",
+          highlight: true,
+        },
         {
           name: "TypeScript / JavaScript ES6+",
           level: 95,
           icon: "Code",
-          highlight: true,
         },
-        { name: "React.js & Next.js", level: 90, icon: "Layout" },
         { name: "Tailwind CSS & Material UI", level: 92, icon: "Palette" },
         { name: "RxJS & Redux / Zustand", level: 88, icon: "Activity" },
       ],
@@ -189,10 +198,14 @@ export const PORTFOLIO_DATA = {
       description:
         "Flujo de trabajo profesional, control de versiones y despliegue.",
       skills: [
-        { name: "Git & GitHub Workflow", level: 95, icon: "GitBranch" },
+        { name: "Git & GitHub | GitKraken", level: 95, icon: "GitBranch" },
         { name: "Android Studio & Xcode", level: 90, icon: "Terminal" },
         { name: "Figma & UI/UX Handoff", level: 85, icon: "Figma" },
-        { name: "Scrum & Agile Development", level: 90, icon: "CheckCircle" },
+        {
+          name: "Scrum & Jira | Agile Development",
+          level: 90,
+          icon: "CheckCircle",
+        },
       ],
     },
   ] as SkillCategory[],
