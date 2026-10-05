@@ -9,13 +9,13 @@ import {
   Sparkles,
   CheckCircle2,
 } from "lucide-react";
-import { PORTFOLIO_DATA } from "../data/portfolioData";
+import { PORTFOLIO_DATA } from "../../data/portfolioData";
 
 interface HeroProps {
   darkMode: boolean;
 }
 
-export const Hero: React.FC<HeroProps> = ({ darkMode }) => {
+export const MainInfo: React.FC<HeroProps> = ({ darkMode }) => {
   const { personalInfo } = PORTFOLIO_DATA;
 
   const mainTechPills = [
