@@ -5,7 +5,10 @@ import {
   Send,
   CheckCircle,
   ArrowUpRight,
+  Loader2,
+  AlertCircle,
 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { PORTFOLIO_DATA } from "../../data/portfolioData";
 import { GithubIcon, LinkedinIcon } from "../helper/SocialIcons";
 
@@ -22,19 +25,58 @@ export const Contact: React.FC<ContactProps> = ({ darkMode }) => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    setIsSending(true);
+    setErrorMessage(null);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    try {
+      if (serviceId && templateId && publicKey) {
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            project_type: formData.projectType,
+            message: formData.message,
+            to_name: personalInfo.name,
+          },
+          publicKey
+        );
+      } else {
+        // Fallback de cortesía si aún no se han configurado las claves en el archivo .env
+        console.warn(
+          "EmailJS no está configurado aún en el archivo .env. Simulando envío..."
+        );
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+      }
+
+      setSubmitted(true);
       setFormData({
         name: "",
         email: "",
-        projectType: "App Multiplataforma (React Native | Ionic)",
+        projectType: "react-native | ionic",
         message: "",
       });
-    }, 4000);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (err: any) {
+      console.error("Error enviando email vía EmailJS:", err);
+      setErrorMessage(
+        "No se pudo enviar el mensaje. Revisa tu conexión o contáctame por WhatsApp."
+      );
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const whatsappMessage = encodeURIComponent(
@@ -326,12 +368,29 @@ export const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                     />
                   </div>
 
+                  {errorMessage && (
+                    <div className="flex items-center gap-2 p-3.5 rounded-xl text-xs font-semibold bg-rose-500/10 border border-rose-500/20 text-rose-500">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-white bg-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-600/25 transition-all duration-200 active:scale-95"
+                    disabled={isSending}
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-white bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-600/25 transition-all duration-200 active:scale-95"
                   >
-                    <Send className="w-4 h-4" />
-                    Enviar Formulario de Cotización
+                    {isSending ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        Enviar Formulario de Cotización
+                      </>
+                    )}
                   </button>
                 </form>
               )}
